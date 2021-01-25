@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".LivingRoom_Power_Plugs_Control">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/modemBtn"
+            android:layout_width="108dp"
+            android:layout_height="108dp"
+            android:layout_marginTop="8dp"
+            android:alpha=".80"
+            android:background="@drawable/values"
+            app:layout_constraintEnd_toEndOf="@+id/textView21"
+            app:layout_constraintStart_toStartOf="@+id/textView21"
+            app:layout_constraintTop_toBottomOf="@+id/textView21" />
+
+        <ImageButton
+            android:id="@+id/televisionBtn"
+            android:layout_width="108dp"
+            android:layout_height="108dp"
+            android:alpha=".80"
+            android:background="@drawable/values"
+            app:layout_constraintBottom_toBottomOf="@+id/modemBtn"
+            app:layout_constraintEnd_toEndOf="@+id/textView22"
+            app:layout_constraintStart_toStartOf="@+id/textView22"
+            app:layout_constraintTop_toTopOf="@+id/modemBtn" />
+
+        <ImageButton
+            android:id="@+id/tvBoxBtn"
+            android:layout_width="108dp"
+            android:layout_height="108dp"
+            android:alpha=".80"
+            android:background="@drawable/values"
+            app:layout_constraintBottom_toBottomOf="@+id/televisionBtn"
+            app:layout_constraintEnd_toEndOf="@+id/textView23"
+            app:layout_constraintStart_toStartOf="@+id/textView23"
+            app:layout_constraintTop_toTopOf="@+id/televisionBtn" />
+
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="108dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView22"
+            app:layout_constraintEnd_toStartOf="@+id/textView22"
+            app:layout_constraintTop_toTopOf="@+id/textView22" />
+
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="108dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="108dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView22"
+            app:layout_constraintStart_toEndOf="@+id/textView22"
+            app:layout_constraintTop_toTopOf="@+id/textView22" />
+
+        <ImageButton
+            android:id="@+id/consoleBtn"
+            android:layout_width="108dp"
+            android:layout_height="108dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:alpha=".80"
+            android:background="@drawable/values"
+            app:layout_constraintEnd_toStartOf="@+id/televisionBtn"
+            app:layout_constraintStart_toEndOf="@+id/modemBtn"
+            app:layout_constraintTop_toBottomOf="@+id/modemBtn" />
+
+        <ImageButton
+            android:id="@+id/telephoneBtn"
+            android:layout_width="108dp"
+            android:layout_height="108dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:alpha=".80"
+            android:background="@drawable/values"
+            app:layout_constraintBottom_toBottomOf="@+id/consoleBtn"
+            app:layout_constraintEnd_toStartOf="@+id/tvBoxBtn"
+            app:layout_constraintStart_toEndOf="@+id/televisionBtn"
+            app:layout_constraintTop_toTopOf="@+id/consoleBtn" />
+
+        <ImageButton
+            android:id="@+id/onAllPowerPlugsBtn"
+            android:layout_width="340dp"
+            android:layout_height="108dp"
+            android:layout_marginTop="8dp"
+            android:alpha=".80"
+            android:background="@drawable/values"
+            app:layout_constraintEnd_toEndOf="@+id/textView22"
+            app:layout_constraintStart_toStartOf="@+id/textView22"
+            app:layout_constraintTop_toBottomOf="@+id/telephoneBtn" />
+
+        <ImageButton
+            android:id="@+id/offAllPowerPlugsBtn"
+            android:layout_width="340dp"
+            android:layout_height="108dp"
+            android:layout_marginTop="8dp"
+            android:alpha=".80"
+            android:background="@drawable/values"
+            app:layout_constraintEnd_toEndOf="@+id/textView22"
+            app:layout_constraintStart_toStartOf="@+id/textView22"
+            app:layout_constraintTop_toBottomOf="@+id/onAllPowerPlugsBtn" />
+
+        <ImageView
+            android:id="@+id/imageModem"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            app:layout_constraintBottom_toBottomOf="@+id/modemBtn"
+            app:layout_constraintEnd_toEndOf="@+id/modemBtn"
+            app:layout_constraintStart_toStartOf="@+id/modemBtn"
+            app:layout_constraintTop_toTopOf="@+id/modemBtn"
+            app:layout_constraintVertical_bias="0.3"
+            app:srcCompat="@drawable/modem" />
+
+        <TextView
+            android:id="@+id/modemTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/molengo"
+            android:text="@string/TurnOn"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/imageModem"
+            app:layout_constraintStart_toStartOf="@+id/imageModem"
+            app:layout_constraintTop_toBottomOf="@+id/imageModem" />
+
+        <ImageView
+            android:id="@+id/imageTelevision"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            app:layout_constraintBottom_toBottomOf="@+id/televisionBtn"
+            app:layout_constraintEnd_toEndOf="@+id/televisionBtn"
+            app:layout_constraintStart_toStartOf="@+id/televisionBtn"
+            app:layout_constraintTop_toTopOf="@+id/televisionBtn"
+            app:layout_constraintVertical_bias="0.3"
+            app:srcCompat="@drawable/television" />
+
+        <TextView
+            android:id="@+id/televisionTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/molengo"
+            android:text="@string/TurnOn"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/imageTelevision"
+            app:layout_constraintStart_toStartOf="@+id/imageTelevision"
+            app:layout_constraintTop_toBottomOf="@+id/imageTelevision" />
+
+        <ImageView
+            android:id="@+id/imageTvBox"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvBoxBtn"
+            app:layout_constraintEnd_toEndOf="@+id/tvBoxBtn"
+            app:layout_constraintStart_toStartOf="@+id/tvBoxBtn"
+            app:layout_constraintTop_toTopOf="@+id/tvBoxBtn"
+            app:layout_constraintVertical_bias="0.3"
+            app:srcCompat="@drawable/tvbox" />
+
+        <TextView
+            android:id="@+id/tvBoxTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/molengo"
+            android:text="@string/TurnOn"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/imageTvBox"
+            app:layout_constraintStart_toStartOf="@+id/imageTvBox"
+            app:layout_constraintTop_toBottomOf="@+id/imageTvBox" />
+
+        <ImageView
+            android:id="@+id/imageConsole"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            app:layout_constraintBottom_toBottomOf="@+id/consoleBtn"
+            app:layout_constraintEnd_toEndOf="@+id/consoleBtn"
+            app:layout_constraintStart_toStartOf="@+id/consoleBtn"
+            app:layout_constraintTop_toTopOf="@+id/consoleBtn"
+            app:layout_constraintVertical_bias="0.3"
+            app:srcCompat="@drawable/arcadegame" />
+
+        <TextView
+            android:id="@+id/consoleTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/molengo"
+            android:text="@string/TurnOn"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/imageConsole"
+            app:layout_constraintStart_toStartOf="@+id/imageConsole"
+            app:layout_constraintTop_toBottomOf="@+id/imageConsole" />
+
+        <ImageView
+            android:id="@+id/imageTelephone"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            app:layout_constraintBottom_toBottomOf="@+id/telephoneBtn"
+            app:layout_constraintEnd_toEndOf="@+id/telephoneBtn"
+            app:layout_constraintStart_toStartOf="@+id/telephoneBtn"
+            app:layout_constraintTop_toTopOf="@+id/telephoneBtn"
+            app:layout_constraintVertical_bias="0.3"
+            app:srcCompat="@drawable/telephone" />
+
+        <TextView
+            android:id="@+id/telephoneTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/molengo"
+            android:text="@string/TurnOn"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/imageTelephone"
+            app:layout_constraintStart_toStartOf="@+id/imageTelephone"
+            app:layout_constraintTop_toBottomOf="@+id/imageTelephone" />
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:layout_constraintBottom_toBottomOf="@+id/onAllPowerPlugsBtn"
+            app:layout_constraintEnd_toEndOf="@+id/onAllPowerPlugsBtn"
+            app:layout_constraintHorizontal_bias="0.05"
+            app:layout_constraintStart_toStartOf="@+id/onAllPowerPlugsBtn"
+            app:layout_constraintTop_toTopOf="@+id/onAllPowerPlugsBtn"
+            app:layout_constraintVertical_bias="0.35000002"
+            app:srcCompat="@drawable/plug" />
+
+        <View
+            android:id="@+id/barraModem"
+            android:layout_width="55dp"
+            android:layout_height="4dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/barraoff"
+            app:layout_constraintBottom_toBottomOf="@+id/modemBtn"
+            app:layout_constraintEnd_toEndOf="@+id/modemBtn"
+            app:layout_constraintStart_toStartOf="@+id/modemBtn" />
+
+        <View
+            android:id="@+id/barraConsole"
+            android:layout_width="55dp"
+            android:layout_height="4dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/barraoff"
+            app:layout_constraintBottom_toBottomOf="@+id/consoleBtn"
+            app:layout_constraintEnd_toEndOf="@+id/consoleBtn"
+            app:layout_constraintStart_toStartOf="@+id/consoleBtn" />
+
+        <View
+            android:id="@+id/barraligartodas"
+            android:layout_width="165dp"
+            android:layout_height="4dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/barraon"
+            app:layout_constraintBottom_toBottomOf="@+id/onAllPowerPlugsBtn"
+            app:layout_constraintEnd_toEndOf="@+id/onAllPowerPlugsBtn"
+            app:layout_constraintStart_toStartOf="@+id/onAllPowerPlugsBtn" />
+
+        <View
+            android:id="@+id/barradesligartodas"
+            android:layout_width="165dp"
+            android:layout_height="4dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/barraoff"
+            app:layout_constraintBottom_toBottomOf="@+id/offAllPowerPlugsBtn"
+            app:layout_constraintEnd_toEndOf="@+id/offAllPowerPlugsBtn"
+            app:layout_constraintStart_toStartOf="@+id/offAllPowerPlugsBtn" />
+
+        <View
+            android:id="@+id/barraTelephone"
+            android:layout_width="55dp"
+            android:layout_height="4dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/barraoff"
+            app:layout_constraintBottom_toBottomOf="@+id/telephoneBtn"
+            app:layout_constraintEnd_toEndOf="@+id/telephoneBtn"
+            app:layout_constraintStart_toStartOf="@+id/telephoneBtn" />
+
+        <View
+            android:id="@+id/barraTelevision"
+            android:layout_width="55dp"
+            android:layout_height="4dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/barraoff"
+            app:layout_constraintBottom_toBottomOf="@+id/televisionBtn"
+            app:layout_constraintEnd_toEndOf="@+id/televisionBtn"
+            app:layout_constraintStart_toStartOf="@+id/televisionBtn" />
+
+        <View
+            android:id="@+id/barraTvBox"
+            android:layout_width="55dp"
+            android:layout_height="4dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/barraoff"
+            app:layout_constraintBottom_toBottomOf="@+id/tvBoxBtn"
+            app:layout_constraintEnd_toEndOf="@+id/tvBoxBtn"
+            app:layout_constraintStart_toStartOf="@+id/tvBoxBtn" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/molengo"
+            android:lines="2"
+            android:text="@string/OnAllPowerPlugs"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="26sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView9"
+            app:layout_constraintEnd_toEndOf="@+id/onAllPowerPlugsBtn"
+            app:layout_constraintStart_toEndOf="@+id/imageView9"
+            app:layout_constraintTop_toTopOf="@+id/imageView9" />
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/molengo"
+            android:lines="2"
+            android:text="@string/OffAllPowerPlugs"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="26sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView14"
+            app:layout_constraintEnd_toEndOf="@+id/offAllPowerPlugsBtn"
+            app:layout_constraintStart_toEndOf="@+id/imageView14"
+            app:layout_constraintTop_toTopOf="@+id/imageView14" />
+
+        <ImageView
+            android:id="@+id/imageView14"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:layout_constraintBottom_toBottomOf="@+id/offAllPowerPlugsBtn"
+            app:layout_constraintEnd_toEndOf="@+id/offAllPowerPlugsBtn"
+            app:layout_constraintHorizontal_bias="0.05"
+            app:layout_constraintStart_toStartOf="@+id/offAllPowerPlugsBtn"
+            app:layout_constraintTop_toTopOf="@+id/offAllPowerPlugsBtn"
+            app:layout_constraintVertical_bias="0.35000002"
+            app:srcCompat="@drawable/plugoff" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>

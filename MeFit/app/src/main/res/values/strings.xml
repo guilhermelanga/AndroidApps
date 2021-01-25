@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">MeFit+</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="welcome">Welcome to MeFit+</string>
+    <string name="account">Create your account here</string>
+    <string name="newaccount">Create Your Account</string>
+    <string name="name">Name</string>
+    <string name="surname">Surname</string>
+    <string name="birthday">Birthday</string>
+    <string name="gender">Gender</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="height">Height</string>
+    <string name="weight">Weight</string>
+    <string name="email" translatable="false">E-mail</string>
+    <string name="create">Create</string>
+    <string name="welcomeuser">Welcome</string>
+    <string name="previous">Previous Calculations</string>
+    <string name="newcalculation">New Calculation</string>
+    <string name="currentdate">Current Date</string>
+    <string name="calculate">Calculate</string>
+    <string name="save">Save</string>
+    <string name="changepassword">Change Password</string>
+    <string name="newpassword">New Password</string>
+    <string name="confirmpassword">Confirm Password</string>
+    <string name="insertusername">Please insert your e-mail</string>
+    <string name="insertpassword">Please insert your Password</string>
+    <string name="signin">Please sign in</string>
+    <string name="insertpersonaldata">Please insert all personal data</string>
+    <string name="passwordnotmatch">Password do not match</string>
+    <string name="registersuccessful">Register successful</string>
+    <string name="errorregistering">Error registering</string>
+    <string name="signout">Sign Out</string>
+    <string name="registerpersonaldata">Register your personal data</string>
+    <string name="homepage">Homepage</string>
+    <string name="wrongpassword">Wrong password</string>
+    <string name="savedata">The data was saved</string>
+    <string name="passwordhaschanged">Your password has been changed</string>
+    <string name="date">Date</string>
+    <string name="minimumweight">Minimum Weight</string>
+    <string name="maximumweight">Maximum Weight</string>
+    <string name="fatindex">Fat Index</string>
+    <string name="fatmass">Fat Mass</string>
+    <string name="totalwater">Total Water</string>
+    <string name="protein">Protein</string>
+    <string name="mineral" translatable="false">Mineral</string>
+    <string name="haveaccount">I already have an account</string>
+    <string name="passworderror">Password has ben not changed</string>
+</resources>

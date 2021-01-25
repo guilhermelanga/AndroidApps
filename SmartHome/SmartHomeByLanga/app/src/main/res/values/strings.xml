@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Smart Home</string>
+    <string name="Password">Password</string>
+    <string name="Login">Login</string>
+    <string name="CreateAccount">Create Account</string>
+    <string name="Lights">Lights</string>
+    <string name="On">On</string>
+    <string name="PowerPlugs">Power Plugs</string>
+    <string name="Temperature">Temperature</string>
+    <string name="Humidity">Humidity</string>
+    <string name="Logout">Logout</string>
+    <string name="TurnOn">Turn On</string>
+    <string name="TurnOff">Turn Off</string>
+    <string name="OnAllPowerPlugs">Turn On All Power Plugs</string>
+    <string name="OffAllPowerPlugs">Turn Off All Power Plugs</string>
+    <string name="OnAllLights">Turn On All Lights</string>
+    <string name="OffAllLights">Turn Off All Lights</string>
+    <string name="OnAll">Turn On All</string>
+    <string name="QuestionPlugs">Are you sure you want to turn on all the power plugs?</string>
+    <string name="OffAll">Turn Off All</string>
+    <string name="QuestionPlugs2">Are you sure you want to turn off all power plugs?</string>
+    <string name="QuestionLights">Are you sure you want to turn on all the lights?</string>
+    <string name="QuestionLights2">Are you sure you want to turn off all the lights?</string>
+    <string name="InsertEmail">Please complete the e-mail field.</string>
+    <string name="InsertPassword">Please complete the password field.</string>
+    <string name="WrongPassword">Wrong Password.</string>
+    <string name="Back">Back</string>
+    <string name="ConfirmPassword">ConfirmPassword</string>
+    <string name="FillTheFields">Please fill in all fields.</string>
+    <string name="PasswordDontMatch">Passwords must be the same.</string>
+    <string name="AccountNotCreated">The account could not be created.</string>
+    <string name="AccoutCreated">Account created successfully.</string>
+</resources>

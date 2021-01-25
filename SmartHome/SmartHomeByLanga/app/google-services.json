@@ -1,0 +1,85 @@
+{
+  "project_info": {
+    "project_number": "195602006141",
+    "firebase_url": "https://smarthomebylanga-15287.firebaseio.com",
+    "project_id": "smarthomebylanga-15287",
+    "storage_bucket": "smarthomebylanga-15287.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:195602006141:android:84fac6a373972c0c",
+        "android_client_info": {
+          "package_name": "com.example.guilh.smarthome"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "195602006141-cri6e0d9quml2nvfkd55gbt2bhafamav.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.guilh.smarthome",
+            "certificate_hash": "380fcd9784c55fa72d8613d67f39742530ab6fbb"
+          }
+        },
+        {
+          "client_id": "195602006141-nrccil5j4ngtpth1uoa8h34gs1ohpt88.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC62xJQmM38rkLXmEvZCZ1S4W2haUD1sY8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "195602006141-nrccil5j4ngtpth1uoa8h34gs1ohpt88.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:195602006141:android:b014e55ac668f309e83114",
+        "android_client_info": {
+          "package_name": "com.example.guilh.smarthomebylanga"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "195602006141-ubfmv13008es5hh71sblv7a18ueab55j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.guilh.smarthomebylanga",
+            "certificate_hash": "380fcd9784c55fa72d8613d67f39742530ab6fbb"
+          }
+        },
+        {
+          "client_id": "195602006141-nrccil5j4ngtpth1uoa8h34gs1ohpt88.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC62xJQmM38rkLXmEvZCZ1S4W2haUD1sY8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "195602006141-nrccil5j4ngtpth1uoa8h34gs1ohpt88.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

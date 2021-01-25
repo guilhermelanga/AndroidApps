@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Smart Home</string>
+    <string name="Password">Palavra-passe</string>
+    <string name="Login">Entrar</string>
+    <string name="CreateAccount">Criar Conta</string>
+    <string name="Lights">Luzes</string>
+    <string name="On">Ligadas</string>
+    <string name="PowerPlugs">Tomadas</string>
+    <string name="Temperature">Temperatura</string>
+    <string name="Humidity">Humidade</string>
+    <string name="Logout">Sair</string>
+    <string name="TurnOn">Ligar</string>
+    <string name="TurnOff">Desligar</string>
+    <string name="OnAllPowerPlugs">Ligar Todas as Tomadas</string>
+    <string name="OffAllPowerPlugs">Desligar Todas as Tomadas</string>
+    <string name="OnAllLights">Ligar Todas as Luzes</string>
+    <string name="OffAllLights">Desligar Todas as Luzes</string>
+    <string name="OnAll">Ligar Todas</string>
+    <string name="QuestionPlugs">Tem certeza que deseja ligar todas as tomadas?</string>
+    <string name="OffAll">Desligar Todas</string>
+    <string name="QuestionPlugs2">Tem certeza que deseja desligar todas as tomadas?</string>
+    <string name="QuestionLights">Tem certeza que deseja ligar todas as luzes?</string>
+    <string name="QuestionLights2">Tem certeza que deseja desligar todas as luzes?</string>
+    <string name="InsertEmail">Por favor complete o campo e-mail.</string>
+    <string name="InsertPassword">Por favor complete o campo palavra-passe.</string>
+    <string name="WrongPassword">Palavra-passe incorreta.</string>
+    <string name="Back">Voltar</string>
+    <string name="ConfirmPassword">Confirme a palavra-passe</string>
+    <string name="FillTheFields">Por favor preencha todos os campos.</string>
+    <string name="PasswordDontMatch">As palavras-passe devem ser iguais.</string>
+    <string name="AccountNotCreated">Não foi possível criar a conta.</string>
+    <string name="AccoutCreated">Conta criada com sucesso.</string>
+</resources>

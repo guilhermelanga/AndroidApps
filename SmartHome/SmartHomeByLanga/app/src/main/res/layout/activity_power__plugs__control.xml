@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".Power_Plugs_Control">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/kitchenBtn"
+            android:layout_width="108dp"
+            android:layout_height="108dp"
+            android:layout_marginTop="8dp"
+            android:alpha=".80"
+            android:background="@drawable/values"
+            app:layout_constraintEnd_toEndOf="@+id/textView21"
+            app:layout_constraintStart_toStartOf="@+id/textView21"
+            app:layout_constraintTop_toBottomOf="@+id/textView21" />
+
+        <ImageButton
+            android:id="@+id/livingRoomBtn"
+            android:layout_width="108dp"
+            android:layout_height="108dp"
+            android:alpha=".80"
+            android:background="@drawable/values"
+            app:layout_constraintBottom_toBottomOf="@+id/kitchenBtn"
+            app:layout_constraintEnd_toEndOf="@+id/textView22"
+            app:layout_constraintStart_toStartOf="@+id/textView22"
+            app:layout_constraintTop_toTopOf="@+id/kitchenBtn" />
+
+        <ImageButton
+            android:id="@+id/bathroomBtn"
+            android:layout_width="108dp"
+            android:layout_height="108dp"
+            android:alpha=".80"
+            android:background="@drawable/values"
+            app:layout_constraintBottom_toBottomOf="@+id/livingRoomBtn"
+            app:layout_constraintEnd_toEndOf="@+id/textView23"
+            app:layout_constraintStart_toStartOf="@+id/textView23"
+            app:layout_constraintTop_toTopOf="@+id/livingRoomBtn" />
+
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="108dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView22"
+            app:layout_constraintEnd_toStartOf="@+id/textView22"
+            app:layout_constraintTop_toTopOf="@+id/textView22" />
+
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="108dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="108dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView22"
+            app:layout_constraintStart_toEndOf="@+id/textView22"
+            app:layout_constraintTop_toTopOf="@+id/textView22" />
+
+        <ImageButton
+            android:id="@+id/coupleBedBtn"
+            android:layout_width="108dp"
+            android:layout_height="108dp"
+            android:layout_marginTop="8dp"
+            android:alpha=".80"
+            android:background="@drawable/values"
+            app:layout_constraintEnd_toEndOf="@+id/textView21"
+            app:layout_constraintStart_toStartOf="@+id/textView21"
+            app:layout_constraintTop_toBottomOf="@+id/kitchenBtn" />
+
+        <ImageButton
+            android:id="@+id/singleBedBtn"
+            android:layout_width="108dp"
+            android:layout_height="108dp"
+            android:alpha=".80"
+            android:background="@drawable/values"
+            app:layout_constraintBottom_toBottomOf="@+id/coupleBedBtn"
+            app:layout_constraintEnd_toEndOf="@+id/textView22"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/textView22"
+            app:layout_constraintTop_toTopOf="@+id/coupleBedBtn" />
+
+        <ImageButton
+            android:id="@+id/laundryBtn"
+            android:layout_width="108dp"
+            android:layout_height="108dp"
+            android:alpha=".80"
+            android:background="@drawable/values"
+            app:layout_constraintBottom_toBottomOf="@+id/singleBedBtn"
+            app:layout_constraintEnd_toEndOf="@+id/textView23"
+            app:layout_constraintStart_toStartOf="@+id/textView23"
+            app:layout_constraintTop_toTopOf="@+id/singleBedBtn" />
+
+        <ImageButton
+            android:id="@+id/garageBtn"
+            android:layout_width="108dp"
+            android:layout_height="108dp"
+            android:layout_marginTop="8dp"
+            android:alpha=".80"
+            android:background="@drawable/values"
+            app:layout_constraintEnd_toEndOf="@+id/textView22"
+            app:layout_constraintStart_toStartOf="@+id/textView22"
+            app:layout_constraintTop_toBottomOf="@+id/coupleBedBtn" />
+
+        <ImageButton
+            android:id="@+id/onAllPowerPlugsBtn"
+            android:layout_width="340dp"
+            android:layout_height="108dp"
+            android:layout_marginTop="8dp"
+            android:alpha=".80"
+            android:background="@drawable/values"
+            app:layout_constraintEnd_toEndOf="@+id/textView22"
+            app:layout_constraintStart_toStartOf="@+id/textView22"
+            app:layout_constraintTop_toBottomOf="@+id/garageBtn" />
+
+        <ImageButton
+            android:id="@+id/offAllPowerPlugsBtn"
+            android:layout_width="340dp"
+            android:layout_height="108dp"
+            android:layout_marginTop="8dp"
+            android:alpha=".80"
+            android:background="@drawable/values"
+            app:layout_constraintEnd_toEndOf="@+id/textView22"
+            app:layout_constraintStart_toStartOf="@+id/textView22"
+            app:layout_constraintTop_toBottomOf="@+id/onAllPowerPlugsBtn" />
+
+        <ImageView
+            android:id="@+id/imageKitchen"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            app:layout_constraintBottom_toBottomOf="@+id/kitchenBtn"
+            app:layout_constraintEnd_toEndOf="@+id/kitchenBtn"
+            app:layout_constraintStart_toStartOf="@+id/kitchenBtn"
+            app:layout_constraintTop_toTopOf="@+id/kitchenBtn"
+            app:layout_constraintVertical_bias="0.3"
+            app:srcCompat="@drawable/kitchenoff" />
+
+        <TextView
+            android:id="@+id/kitchenTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/molengo"
+            android:text="@string/On"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/imageKitchen"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/imageKitchen"
+            app:layout_constraintTop_toBottomOf="@+id/imageKitchen" />
+
+        <ImageView
+            android:id="@+id/imageLivingRoom"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            app:layout_constraintBottom_toBottomOf="@+id/livingRoomBtn"
+            app:layout_constraintEnd_toEndOf="@+id/livingRoomBtn"
+            app:layout_constraintStart_toStartOf="@+id/livingRoomBtn"
+            app:layout_constraintTop_toTopOf="@+id/livingRoomBtn"
+            app:layout_constraintVertical_bias="0.3"
+            app:srcCompat="@drawable/livingroomoff" />
+
+        <TextView
+            android:id="@+id/livingRoomTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/molengo"
+            android:text="@string/On"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/imageLivingRoom"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/imageLivingRoom"
+            app:layout_constraintTop_toBottomOf="@+id/imageLivingRoom" />
+
+        <ImageView
+            android:id="@+id/imageBathroom"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            app:layout_constraintBottom_toBottomOf="@+id/bathroomBtn"
+            app:layout_constraintEnd_toEndOf="@+id/bathroomBtn"
+            app:layout_constraintStart_toStartOf="@+id/bathroomBtn"
+            app:layout_constraintTop_toTopOf="@+id/bathroomBtn"
+            app:layout_constraintVertical_bias="0.3"
+            app:srcCompat="@drawable/bathroomoff" />
+
+        <TextView
+            android:id="@+id/bathroomTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/molengo"
+            android:text="@string/On"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/imageBathroom"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/imageBathroom"
+            app:layout_constraintTop_toBottomOf="@+id/imageBathroom" />
+
+        <ImageView
+            android:id="@+id/imageCoupleBed"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            app:layout_constraintBottom_toBottomOf="@+id/coupleBedBtn"
+            app:layout_constraintEnd_toEndOf="@+id/coupleBedBtn"
+            app:layout_constraintStart_toStartOf="@+id/coupleBedBtn"
+            app:layout_constraintTop_toTopOf="@+id/coupleBedBtn"
+            app:layout_constraintVertical_bias="0.3"
+            app:srcCompat="@drawable/bedroomoff" />
+
+        <TextView
+            android:id="@+id/coupleBedTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/molengo"
+            android:text="@string/On"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/imageCoupleBed"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/imageCoupleBed"
+            app:layout_constraintTop_toBottomOf="@+id/imageCoupleBed" />
+
+        <ImageView
+            android:id="@+id/imageSingleBed"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            app:layout_constraintBottom_toBottomOf="@+id/singleBedBtn"
+            app:layout_constraintEnd_toEndOf="@+id/singleBedBtn"
+            app:layout_constraintStart_toStartOf="@+id/singleBedBtn"
+            app:layout_constraintTop_toTopOf="@+id/singleBedBtn"
+            app:layout_constraintVertical_bias="0.3"
+            app:srcCompat="@drawable/bedoff" />
+
+        <TextView
+            android:id="@+id/singleBedTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/molengo"
+            android:text="@string/On"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/imageSingleBed"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/imageSingleBed"
+            app:layout_constraintTop_toBottomOf="@+id/imageSingleBed" />
+
+        <ImageView
+            android:id="@+id/imageLaundry"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            app:layout_constraintBottom_toBottomOf="@+id/laundryBtn"
+            app:layout_constraintEnd_toEndOf="@+id/laundryBtn"
+            app:layout_constraintStart_toStartOf="@+id/laundryBtn"
+            app:layout_constraintTop_toTopOf="@+id/laundryBtn"
+            app:layout_constraintVertical_bias="0.3"
+            app:srcCompat="@drawable/laundryoff" />
+
+        <TextView
+            android:id="@+id/laundryTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/molengo"
+            android:text="@string/On"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/imageLaundry"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/imageLaundry"
+            app:layout_constraintTop_toBottomOf="@+id/imageLaundry" />
+
+        <ImageView
+            android:id="@+id/imageGarage"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            app:layout_constraintBottom_toBottomOf="@+id/garageBtn"
+            app:layout_constraintEnd_toEndOf="@+id/garageBtn"
+            app:layout_constraintStart_toStartOf="@+id/garageBtn"
+            app:layout_constraintTop_toTopOf="@+id/garageBtn"
+            app:layout_constraintVertical_bias="0.3"
+            app:srcCompat="@drawable/garageoff" />
+
+        <TextView
+            android:id="@+id/garageTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/molengo"
+            android:text="@string/On"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/imageGarage"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/imageGarage"
+            app:layout_constraintTop_toBottomOf="@+id/imageGarage" />
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:layout_constraintBottom_toBottomOf="@+id/onAllPowerPlugsBtn"
+            app:layout_constraintEnd_toEndOf="@+id/onAllPowerPlugsBtn"
+            app:layout_constraintHorizontal_bias="0.05"
+            app:layout_constraintStart_toStartOf="@+id/onAllPowerPlugsBtn"
+            app:layout_constraintTop_toTopOf="@+id/onAllPowerPlugsBtn"
+            app:layout_constraintVertical_bias="0.35000002"
+            app:srcCompat="@drawable/plug" />
+
+        <View
+            android:id="@+id/barraKitchen"
+            android:layout_width="55dp"
+            android:layout_height="4dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/barraoff"
+            app:layout_constraintBottom_toBottomOf="@+id/kitchenBtn"
+            app:layout_constraintEnd_toEndOf="@+id/kitchenBtn"
+            app:layout_constraintStart_toStartOf="@+id/kitchenBtn" />
+
+        <View
+            android:id="@+id/barraCoupleBed"
+            android:layout_width="55dp"
+            android:layout_height="4dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/barraoff"
+            app:layout_constraintBottom_toBottomOf="@+id/coupleBedBtn"
+            app:layout_constraintEnd_toEndOf="@+id/coupleBedBtn"
+            app:layout_constraintStart_toStartOf="@+id/coupleBedBtn" />
+
+        <View
+            android:id="@+id/barraGarage"
+            android:layout_width="55dp"
+            android:layout_height="4dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/barraoff"
+            app:layout_constraintBottom_toBottomOf="@+id/garageBtn"
+            app:layout_constraintEnd_toEndOf="@+id/garageBtn"
+            app:layout_constraintStart_toStartOf="@+id/garageBtn" />
+
+        <View
+            android:id="@+id/barraligartodas"
+            android:layout_width="165dp"
+            android:layout_height="4dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/barraon"
+            app:layout_constraintBottom_toBottomOf="@+id/onAllPowerPlugsBtn"
+            app:layout_constraintEnd_toEndOf="@+id/onAllPowerPlugsBtn"
+            app:layout_constraintStart_toStartOf="@+id/onAllPowerPlugsBtn" />
+
+        <View
+            android:id="@+id/barradesligartodas"
+            android:layout_width="165dp"
+            android:layout_height="4dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/barraoff"
+            app:layout_constraintBottom_toBottomOf="@+id/offAllPowerPlugsBtn"
+            app:layout_constraintEnd_toEndOf="@+id/offAllPowerPlugsBtn"
+            app:layout_constraintStart_toStartOf="@+id/offAllPowerPlugsBtn" />
+
+        <View
+            android:id="@+id/barraSingleBed"
+            android:layout_width="55dp"
+            android:layout_height="4dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/barraoff"
+            app:layout_constraintBottom_toBottomOf="@+id/singleBedBtn"
+            app:layout_constraintEnd_toEndOf="@+id/singleBedBtn"
+            app:layout_constraintStart_toStartOf="@+id/singleBedBtn" />
+
+        <View
+            android:id="@+id/barraLaundry"
+            android:layout_width="55dp"
+            android:layout_height="4dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/barraoff"
+            app:layout_constraintBottom_toBottomOf="@+id/laundryBtn"
+            app:layout_constraintEnd_toEndOf="@+id/laundryBtn"
+            app:layout_constraintStart_toStartOf="@+id/laundryBtn" />
+
+        <View
+            android:id="@+id/barraLivingRoom"
+            android:layout_width="55dp"
+            android:layout_height="4dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/barraoff"
+            app:layout_constraintBottom_toBottomOf="@+id/livingRoomBtn"
+            app:layout_constraintEnd_toEndOf="@+id/livingRoomBtn"
+            app:layout_constraintStart_toStartOf="@+id/livingRoomBtn" />
+
+        <View
+            android:id="@+id/barraBathroom"
+            android:layout_width="55dp"
+            android:layout_height="4dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/barraoff"
+            app:layout_constraintBottom_toBottomOf="@+id/bathroomBtn"
+            app:layout_constraintEnd_toEndOf="@+id/bathroomBtn"
+            app:layout_constraintStart_toStartOf="@+id/bathroomBtn" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/molengo"
+            android:lines="2"
+            android:text="@string/OnAllPowerPlugs"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="26sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView9"
+            app:layout_constraintEnd_toEndOf="@+id/onAllPowerPlugsBtn"
+            app:layout_constraintStart_toEndOf="@+id/imageView9"
+            app:layout_constraintTop_toTopOf="@+id/imageView9" />
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/molengo"
+            android:lines="2"
+            android:text="@string/OffAllPowerPlugs"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="26sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView14"
+            app:layout_constraintEnd_toEndOf="@+id/offAllPowerPlugsBtn"
+            app:layout_constraintStart_toEndOf="@+id/imageView14"
+            app:layout_constraintTop_toTopOf="@+id/imageView14" />
+
+        <ImageView
+            android:id="@+id/imageView14"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:layout_constraintBottom_toBottomOf="@+id/offAllPowerPlugsBtn"
+            app:layout_constraintEnd_toEndOf="@+id/offAllPowerPlugsBtn"
+            app:layout_constraintHorizontal_bias="0.05"
+            app:layout_constraintStart_toStartOf="@+id/offAllPowerPlugsBtn"
+            app:layout_constraintTop_toTopOf="@+id/offAllPowerPlugsBtn"
+            app:layout_constraintVertical_bias="0.35000002"
+            app:srcCompat="@drawable/plugoff" />
+
+        <TextView
+            android:id="@+id/plugsOnKitchenTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="25dp"
+            android:fontFamily="@font/molengo"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/kitchenTxt"
+            app:layout_constraintEnd_toEndOf="@+id/kitchenBtn"
+            app:layout_constraintTop_toTopOf="@+id/kitchenTxt"
+            app:layout_constraintVertical_bias="0.8" />
+
+        <TextView
+            android:id="@+id/plugsOnCoupleBedTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="25dp"
+            android:fontFamily="@font/molengo"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/coupleBedTxt"
+            app:layout_constraintEnd_toEndOf="@+id/coupleBedBtn"
+            app:layout_constraintTop_toTopOf="@+id/coupleBedTxt"
+            app:layout_constraintVertical_bias="0.8" />
+
+        <TextView
+            android:id="@+id/plugsOnKGarageTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/molengo"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/garageTxt"
+            app:layout_constraintEnd_toEndOf="@+id/garageBtn"
+            app:layout_constraintTop_toTopOf="@+id/garageTxt"
+            app:layout_constraintVertical_bias="0.8" />
+
+        <TextView
+            android:id="@+id/plugsOnSingleBedTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="25dp"
+            android:fontFamily="@font/molengo"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/singleBedTxt"
+            app:layout_constraintEnd_toEndOf="@+id/singleBedBtn"
+            app:layout_constraintTop_toTopOf="@+id/singleBedTxt"
+            app:layout_constraintVertical_bias="0.8" />
+
+        <TextView
+            android:id="@+id/plugsOnLaundryTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="25dp"
+            android:fontFamily="@font/molengo"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/laundryTxt"
+            app:layout_constraintEnd_toEndOf="@+id/laundryBtn"
+            app:layout_constraintTop_toTopOf="@+id/laundryTxt"
+            app:layout_constraintVertical_bias="0.8" />
+
+        <TextView
+            android:id="@+id/plugsOnLivingRoomTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="25dp"
+            android:fontFamily="@font/molengo"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/livingRoomTxt"
+            app:layout_constraintEnd_toEndOf="@+id/livingRoomBtn"
+            app:layout_constraintTop_toTopOf="@+id/livingRoomTxt"
+            app:layout_constraintVertical_bias="0.8" />
+
+        <TextView
+            android:id="@+id/plugsOnBathroomTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="25dp"
+            android:fontFamily="@font/molengo"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/bathroomTxt"
+            app:layout_constraintEnd_toEndOf="@+id/bathroomBtn"
+            app:layout_constraintTop_toTopOf="@+id/bathroomTxt"
+            app:layout_constraintVertical_bias="0.8" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>

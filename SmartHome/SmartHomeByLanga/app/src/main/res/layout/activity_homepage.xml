@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".Homepage">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/lightsBtn"
+            android:layout_width="108dp"
+            android:layout_height="108dp"
+            android:layout_marginTop="4dp"
+            android:alpha=".80"
+            android:background="@drawable/values"
+            app:layout_constraintEnd_toEndOf="@+id/textView21"
+            app:layout_constraintStart_toStartOf="@+id/textView21"
+            app:layout_constraintTop_toBottomOf="@+id/textView21" />
+
+        <ImageButton
+            android:id="@+id/powerPlugBtn"
+            android:layout_width="108dp"
+            android:layout_height="108dp"
+            android:alpha=".80"
+            android:background="@drawable/values"
+            app:layout_constraintBottom_toBottomOf="@+id/humidade"
+            app:layout_constraintEnd_toEndOf="@+id/textView23"
+            app:layout_constraintStart_toStartOf="@+id/textView23"
+            app:layout_constraintTop_toTopOf="@+id/humidade" />
+
+        <View
+            android:id="@+id/temperatura"
+            android:layout_width="224dp"
+            android:layout_height="108dp"
+            android:alpha=".80"
+            android:background="@drawable/values"
+            app:layout_constraintBottom_toBottomOf="@+id/lightsBtn"
+            app:layout_constraintEnd_toEndOf="@+id/textView23"
+            app:layout_constraintStart_toStartOf="@+id/textView22"
+            app:layout_constraintTop_toTopOf="@+id/lightsBtn"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <View
+            android:id="@+id/barraLights"
+            android:layout_width="55dp"
+            android:layout_height="4dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/barraon"
+            app:layout_constraintBottom_toBottomOf="@+id/lightsBtn"
+            app:layout_constraintEnd_toEndOf="@+id/lightsBtn"
+            app:layout_constraintStart_toStartOf="@+id/lightsBtn" />
+
+        <View
+            android:id="@+id/barraTemperature"
+            android:layout_width="110dp"
+            android:layout_height="4dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/barraon"
+            app:layout_constraintBottom_toBottomOf="@+id/temperatura"
+            app:layout_constraintEnd_toEndOf="@+id/temperatura"
+            app:layout_constraintStart_toStartOf="@+id/temperatura" />
+
+        <ImageView
+            android:id="@+id/imageLights"
+            android:layout_width="40dp"
+            android:layout_height="60dp"
+            app:layout_constraintBottom_toBottomOf="@+id/lightsBtn"
+            app:layout_constraintEnd_toEndOf="@+id/lightsBtn"
+            app:layout_constraintStart_toStartOf="@+id/lightsBtn"
+            app:layout_constraintTop_toTopOf="@+id/lightsBtn"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/lamp" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="32dp"
+            android:fontFamily="@font/molengo"
+            android:text="@string/Lights"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/lightsBtn"
+            app:layout_constraintEnd_toEndOf="@+id/lightsBtn"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/lightsBtn"
+            app:layout_constraintTop_toBottomOf="@+id/imageLights" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/molengo"
+            android:text="@string/On"
+            android:textColor="#000000"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="@+id/textView6"
+            app:layout_constraintStart_toStartOf="@+id/textView6"
+            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+        <TextView
+            android:id="@+id/lightsOnTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/molengo"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="34sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView7"
+            app:layout_constraintStart_toEndOf="@+id/textView6"
+            app:layout_constraintTop_toTopOf="@+id/textView6" />
+
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="70dp"
+            android:layout_height="80dp"
+            app:layout_constraintBottom_toBottomOf="@+id/temperatura"
+            app:layout_constraintEnd_toEndOf="@+id/temperatura"
+            app:layout_constraintHorizontal_bias="0.05"
+            app:layout_constraintStart_toStartOf="@+id/temperatura"
+            app:layout_constraintTop_toTopOf="@+id/temperatura"
+            app:layout_constraintVertical_bias="0.40"
+            app:srcCompat="@drawable/thermometer" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/molengo"
+            android:text="@string/Temperature"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView11"
+            app:layout_constraintEnd_toEndOf="@+id/temperatura"
+            app:layout_constraintStart_toEndOf="@+id/imageView11"
+            app:layout_constraintTop_toTopOf="@+id/imageView11"
+            app:layout_constraintVertical_bias="0.100000024" />
+
+        <TextView
+            android:id="@+id/temperatureTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-1dp"
+            android:fontFamily="@font/molengo"
+            android:text="00"
+            android:textColor="#000000"
+            android:textSize="36sp"
+            app:layout_constraintEnd_toEndOf="@+id/textView9"
+            app:layout_constraintStart_toStartOf="@+id/textView9"
+            app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/molengo"
+            android:text="ºC"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/temperatureTxt"
+            app:layout_constraintStart_toEndOf="@+id/temperatureTxt"
+            app:layout_constraintTop_toTopOf="@+id/temperatureTxt" />
+
+        <View
+            android:id="@+id/humidade"
+            android:layout_width="224dp"
+            android:layout_height="108dp"
+            android:layout_marginTop="8dp"
+            android:alpha=".80"
+            android:background="@drawable/values"
+            app:layout_constraintEnd_toEndOf="@+id/textView22"
+            app:layout_constraintStart_toStartOf="@+id/textView21"
+            app:layout_constraintTop_toBottomOf="@+id/lightsBtn" />
+
+        <ImageView
+            android:id="@+id/imageView12"
+            android:layout_width="70dp"
+            android:layout_height="80dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/humidade"
+            app:layout_constraintEnd_toEndOf="@+id/humidade"
+            app:layout_constraintHorizontal_bias="0.05"
+            app:layout_constraintStart_toStartOf="@+id/humidade"
+            app:layout_constraintTop_toTopOf="@+id/humidade"
+            app:layout_constraintVertical_bias="0.40"
+            app:srcCompat="@drawable/humidity" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/molengo"
+            android:text="@string/Humidity"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView12"
+            app:layout_constraintEnd_toEndOf="@+id/humidade"
+            app:layout_constraintStart_toEndOf="@+id/imageView12"
+            app:layout_constraintTop_toTopOf="@+id/imageView12"
+            app:layout_constraintVertical_bias="0.100000024" />
+
+        <View
+            android:id="@+id/barraHumidty"
+            android:layout_width="110dp"
+            android:layout_height="4dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/barraon"
+            app:layout_constraintBottom_toBottomOf="@+id/humidade"
+            app:layout_constraintEnd_toEndOf="@+id/humidade"
+            app:layout_constraintStart_toStartOf="@+id/humidade" />
+
+        <View
+            android:id="@+id/barraPowerPlugs"
+            android:layout_width="55dp"
+            android:layout_height="4dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/barraon"
+            app:layout_constraintBottom_toBottomOf="@+id/humidade"
+            app:layout_constraintEnd_toEndOf="@+id/powerPlugBtn"
+            app:layout_constraintStart_toStartOf="@+id/powerPlugBtn" />
+
+        <TextView
+            android:id="@+id/humidityTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/molengo"
+            android:text="00"
+            android:textColor="#000000"
+            android:textSize="36sp"
+            app:layout_constraintEnd_toEndOf="@+id/textView13"
+            app:layout_constraintStart_toStartOf="@+id/textView13"
+            app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/molengo"
+            android:text="%"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/humidityTxt"
+            app:layout_constraintStart_toEndOf="@+id/humidityTxt"
+            app:layout_constraintTop_toTopOf="@+id/humidityTxt" />
+
+        <ImageView
+            android:id="@+id/imagePowerPlugs"
+            android:layout_width="40dp"
+            android:layout_height="60dp"
+            app:layout_constraintBottom_toBottomOf="@+id/powerPlugBtn"
+            app:layout_constraintEnd_toEndOf="@+id/powerPlugBtn"
+            app:layout_constraintStart_toStartOf="@+id/powerPlugBtn"
+            app:layout_constraintTop_toTopOf="@+id/powerPlugBtn"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/plug" />
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="32dp"
+            android:fontFamily="@font/molengo"
+            android:text="@string/PowerPlugs"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/powerPlugBtn"
+            app:layout_constraintEnd_toEndOf="@+id/powerPlugBtn"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/powerPlugBtn"
+            app:layout_constraintTop_toBottomOf="@+id/imagePowerPlugs" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/molengo"
+            android:text="@string/On"
+            android:textColor="#000000"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="@+id/textView17"
+            app:layout_constraintStart_toStartOf="@+id/textView17"
+            app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+        <TextView
+            android:id="@+id/plugsOnTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/molengo"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="34sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView18"
+            app:layout_constraintStart_toEndOf="@+id/textView17"
+            app:layout_constraintTop_toTopOf="@+id/textView17" />
+
+        <ImageButton
+            android:id="@+id/fridgeBtn"
+            android:layout_width="108dp"
+            android:layout_height="108dp"
+            android:layout_marginTop="8dp"
+            android:alpha=".80"
+            android:background="@drawable/values"
+            app:layout_constraintEnd_toEndOf="@+id/textView21"
+            app:layout_constraintStart_toStartOf="@+id/textView21"
+            app:layout_constraintTop_toBottomOf="@+id/humidade" />
+
+        <ImageButton
+            android:id="@+id/coffeeMachineBtn"
+            android:layout_width="108dp"
+            android:layout_height="108dp"
+            android:alpha=".80"
+            android:background="@drawable/values"
+            app:layout_constraintBottom_toBottomOf="@+id/fridgeBtn"
+            app:layout_constraintEnd_toEndOf="@+id/textView22"
+            app:layout_constraintStart_toStartOf="@+id/textView22"
+            app:layout_constraintTop_toTopOf="@+id/fridgeBtn" />
+
+        <ImageButton
+            android:id="@+id/logoutBtn"
+            android:layout_width="108dp"
+            android:layout_height="108dp"
+            android:alpha=".80"
+            android:background="@drawable/values"
+            app:layout_constraintBottom_toBottomOf="@+id/coffeeMachineBtn"
+            app:layout_constraintEnd_toEndOf="@+id/textView23"
+            app:layout_constraintStart_toStartOf="@+id/textView23"
+            app:layout_constraintTop_toTopOf="@+id/coffeeMachineBtn" />
+
+        <ImageButton
+            android:id="@+id/outros2"
+            android:layout_width="340dp"
+            android:layout_height="108dp"
+            android:layout_marginTop="8dp"
+            android:alpha=".80"
+            android:background="@drawable/values"
+            app:layout_constraintEnd_toEndOf="@+id/textView23"
+            app:layout_constraintStart_toStartOf="@+id/textView21"
+            app:layout_constraintTop_toBottomOf="@+id/coffeeMachineBtn" />
+
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="108dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView22"
+            app:layout_constraintEnd_toStartOf="@+id/textView22"
+            app:layout_constraintTop_toTopOf="@+id/textView22" />
+
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="108dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="108dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView22"
+            app:layout_constraintStart_toEndOf="@+id/textView22"
+            app:layout_constraintTop_toTopOf="@+id/textView22" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            app:layout_constraintBottom_toBottomOf="@+id/logoutBtn"
+            app:layout_constraintEnd_toEndOf="@+id/logoutBtn"
+            app:layout_constraintStart_toStartOf="@+id/logoutBtn"
+            app:layout_constraintTop_toTopOf="@+id/logoutBtn"
+            app:layout_constraintVertical_bias="0.3"
+            app:srcCompat="@drawable/exit" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/molengo"
+            android:text="@string/Logout"
+            android:textColor="#000000"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>
