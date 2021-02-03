@@ -10,7 +10,7 @@ import java.util.Base64;
 
 public class Movimentos {
 
-    private String data, categoria, descricao, tipo;
+    private String data, categoria, descricao, tipo, id;
 
     private Double valor;
 
@@ -24,6 +24,14 @@ public class Movimentos {
                 .child(mesAno)
                 .push()
                 .setValue(this);
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getData() {

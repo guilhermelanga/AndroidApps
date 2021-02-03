@@ -1,5 +1,6 @@
 package com.example.organizzebylanga.activity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -12,10 +13,12 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -26,6 +29,7 @@ import android.view.View;
 import android.widget.CalendarView;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.organizzebylanga.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -53,6 +57,7 @@ public class PrincipalActivity extends AppCompatActivity {
     private RecyclerView recyclerMovimentos;
     private AdapterMovimentacao adapterMovimentacao;
     private List <Movimentos> movimentos = new ArrayList<>();
+    private Movimentos movimento;
     private DatabaseReference movimentacoesRef;
     private String mesAnoSelecionado;
     private Double despesaTotal = 0.00;
@@ -64,7 +69,7 @@ public class PrincipalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
         Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle("Organizze");
+        toolbar.setTitle("Organizze by Langa");
         setSupportActionBar(toolbar);
         editOla = findViewById(R.id.editOla);
         editSaldo =findViewById(R.id.editSaldo);
@@ -72,6 +77,7 @@ public class PrincipalActivity extends AppCompatActivity {
         recyclerMovimentos = findViewById(R.id.recyclerMovimentos);
 
         conifgCalendarView();
+        swipe();
 
         adapterMovimentacao = new AdapterMovimentacao(movimentos, this);
 
@@ -80,8 +86,84 @@ public class PrincipalActivity extends AppCompatActivity {
         recyclerMovimentos.setHasFixedSize(true);
         recyclerMovimentos.setAdapter(adapterMovimentacao);
 
+    }
+
+    public void swipe(){
+        ItemTouchHelper.Callback itemTouch = new ItemTouchHelper.Callback() {
+            @Override
+            public int getMovementFlags(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder) {
+                int dragFlags = ItemTouchHelper.ACTION_STATE_IDLE;
+                int swipeFlags = ItemTouchHelper.START | ItemTouchHelper.END;
+                return makeMovementFlags(dragFlags, swipeFlags );
+            }
+
+            @Override
+            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+                excluirMovimento(viewHolder);
+            }
+        };
+
+        new ItemTouchHelper(itemTouch).attachToRecyclerView(recyclerMovimentos);
+    }
+
+    public void excluirMovimento(RecyclerView.ViewHolder viewHolder){
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+
+        alertDialog.setTitle("Excluir Movimento da Conta");
+        alertDialog.setMessage("Tem certeza que deseja excluir o movimento da sua conta?");
+        alertDialog.setCancelable(false);
+
+        alertDialog.setPositiveButton("Confirmar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                int position = viewHolder.getAdapterPosition();
+                movimento = movimentos.get(position);
+
+                String emailUtilizador = auth.getCurrentUser().getEmail();
+                String idUtiliziador = Base64Custom.codifica(emailUtilizador);
+                movimentacoesRef = databaseReference.child("movimentos")
+                        .child(idUtiliziador)
+                        .child(mesAnoSelecionado);
+
+                movimentacoesRef.child(movimento.getId()).removeValue();
+
+                adapterMovimentacao.notifyItemRemoved(position);
+
+                atualizaSaldo();
 
 
+            }
+        });
+
+        alertDialog.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Toast.makeText(PrincipalActivity.this, "O movimento não foi excluído.", Toast.LENGTH_SHORT).show();
+                adapterMovimentacao.notifyDataSetChanged();
+            }
+        });
+        AlertDialog alert = alertDialog.create();
+        alert.show();
+    }
+
+    public void atualizaSaldo(){
+        String emailUtilizador = auth.getCurrentUser().getEmail();
+        String idUtiliziador = Base64Custom.codifica(emailUtilizador);
+        utilizadorRef = databaseReference.child("users").child(idUtiliziador);
+
+        if(movimento.getTipo().equals("r")){
+            receitaTotal = receitaTotal - movimento.getValor();
+            utilizadorRef.child("receitaTotal").setValue(receitaTotal);
+        }
+        if(movimento.getTipo().equals("d")){
+            despesaTotal = despesaTotal - movimento.getValor();
+            utilizadorRef.child("despesaTotal").setValue(despesaTotal);
+        }
     }
 
     public void getMovimentacoes(){
@@ -97,6 +179,7 @@ public class PrincipalActivity extends AppCompatActivity {
                 movimentos.clear();
                 for(DataSnapshot dados: snapshot.getChildren()){
                     Movimentos movimento = dados.getValue(Movimentos.class);
+                    movimento.setId(dados.getKey());
                     movimentos.add(movimento);
                 }
                 adapterMovimentacao.notifyDataSetChanged();
