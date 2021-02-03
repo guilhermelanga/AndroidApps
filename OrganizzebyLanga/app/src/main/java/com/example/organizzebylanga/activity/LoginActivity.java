@@ -22,40 +22,57 @@ import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 
 public class LoginActivity extends AppCompatActivity {
 
+    //DECLARAÇÃO DOS CAMPOS DE ENTRADA
     private TextView editEmail, editPalavraPasse;
     private Button btnEntrar;
+
+    //CONEXÃO COM O AUTENTICADOR DO FIREBASE
     private FirebaseAuth auth;
+
+    //CONEXÃO COM O MODEL UTILIZADOR
     private Utilizador utilizador;
+
+    //CONTROLE DOS DADOS
     private boolean dadosVerificados;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        //SYNC DOS CAMPOS DE ENTRADA
         editEmail = findViewById(R.id.editEmail);
         editPalavraPasse = findViewById(R.id.editPalavraPasse);
         btnEntrar = findViewById(R.id.btnEntrar);
 
+        //ALTERA NOME QUE APARECE NA TOOLBAR
         getSupportActionBar().setTitle("Entrar");
 
+        //DEFINE O QUE ACONTECE AO CLICAR NO BOTÃO ENTRAR
         btnEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String getEmail =  editEmail.getText().toString();
                 String getPalavraPasse = editPalavraPasse.getText().toString();
 
+                //VERIFICA OS DADOS INSERIDOS
                 verificarDados(getEmail, getPalavraPasse);
 
+
                 if(dadosVerificados){
+
+                    //ENVIA OS DADOS AO MODEL
                     utilizador = new Utilizador();
                     utilizador.setEmail(getEmail);
                     utilizador.setPalavraPasse(getPalavraPasse);
+
+                    //CHAMA O MÉTODO PARA FAZER O LOGIN
                     validarLogin();
                 }
             }
         });
     }
 
+    //MÉTODO PARA VERIFICAR SE TODOS OS CAMPOS FORAM PREENCHIDOS
     public boolean verificarDados(String email, String palavraPasse){
 
         if (!email.isEmpty()) {
@@ -70,8 +87,11 @@ public class LoginActivity extends AppCompatActivity {
         return dadosVerificados;
     }
 
+    //MÉTODO PARA VALIDAR E FETUAR O LOGIN
     public void validarLogin(){
+
         auth = FirebaseConfig.getFirebaseAuth();
+
         auth.signInWithEmailAndPassword(
                 utilizador.getEmail(),
                 utilizador.getPalavraPasse()
@@ -83,6 +103,8 @@ public class LoginActivity extends AppCompatActivity {
                 }else{
 
                     String excecao = "";
+
+                    //LISTA DAS EXCEÇÕES QUE PODEM OCORRER EM CASO DE FALHA NO LOGIN
                     try {
                         throw task.getException();
                     }catch (FirebaseAuthInvalidUserException e){
@@ -99,6 +121,7 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    //MÉTODO PARA ABRIR A ACTIVITY EM CASO DE SUCESSO NO LOGIN
     public void abrirPrincipalActivity(){
         startActivity(new Intent(this, PrincipalActivity.class));
         finish();

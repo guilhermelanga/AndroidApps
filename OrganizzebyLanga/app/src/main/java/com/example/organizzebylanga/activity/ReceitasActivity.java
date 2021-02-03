@@ -23,25 +23,39 @@ import com.google.firebase.database.ValueEventListener;
 
 public class ReceitasActivity extends AppCompatActivity {
 
+    //DECLARAÇÃO DOS CAMPOS DE ENTRADA
     private TextInputEditText editData, editCategoria, editDescricao;
     private EditText editValor;
+
+    //ACESSO AO MODEL MOVIMENTOS
     private Movimentos movimentos;
+
+    //GET FIREBASE UTILIZADOR E REFERÊNCIA DO DATABASE
     private DatabaseReference databaseReference = FirebaseConfig.getFirebaseDataBase();
     private FirebaseAuth auth = FirebaseConfig.getFirebaseAuth();
+
+    //CONTROLE DAS RECEITAS
     private Double receitaTotal, receitaAtualizada;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_receitas);
+
+        //SYNC DOS CAMPOS DE ENTRADA
         editData=findViewById(R.id.editData);
         editCategoria=findViewById(R.id.editCategoria);
         editDescricao=findViewById(R.id.editDescricao);
         editValor=findViewById(R.id.editValor);
 
+        //MÉTODO PARA BUSCAR O TOTAL DE RECEITAS NO FIREBASE
         getReceitaTotal();
+
+        //INICIAR SEMPRE COM A DATA ATUAL NO CAMPO DATA
         editData.setText(DataAtual.dataAtual());
     }
 
+    //MÉTODO PARA GUARDAR A RECEITA QUANDO FOR CLICADO NO BOTÃO ADICIONAR
     public void guardarReceita(View view) {
         if (validarCampos()) {
             String data = editData.getText().toString();
@@ -55,12 +69,19 @@ public class ReceitasActivity extends AppCompatActivity {
 
             receitaAtualizada = receitaTotal + valorReceita;
 
+            //ATUALIZAR O VALOR DAS RECEITAS NO FIREBASE
             atualizarReceita(receitaAtualizada);
+
+            //CHAMA O MODEL MOVIMENTOS, MÉTODO GUARDAR, PASSANDO DATA QUE FOI INTRODUZIDA NO CAMPO DATA
+            //E GUARDA O MOVIMENTO NO MESANO SELECIONADOS
             movimentos.guardar(data);
 
+            //ENCERRA A ACTIVITY E VOLTA A PRINCIPAL
             finish();
         }
     }
+
+    //MÉTODO ARA VERIFICAR SE TODOS OS CAMPOS FORAM PREENCHIDOS
     public Boolean validarCampos(){
 
         String valor = editValor.getText().toString();
@@ -97,6 +118,7 @@ public class ReceitasActivity extends AppCompatActivity {
     }
 
 
+    //MÉTODO PARA BUSCAR O TOTAL DE DESPESAS NO FIREBASE
     public void getReceitaTotal(){
         String emailUtilizador = auth.getCurrentUser().getEmail();
         String idUtiliziador = Base64Custom.codifica(emailUtilizador);
@@ -116,6 +138,7 @@ public class ReceitasActivity extends AppCompatActivity {
         });
     }
 
+    //MÉTODO PARA ATUALIZAR O VALOR DAS DESPESAS NO FIREBASE
     public void atualizarReceita(Double receita) {
         String emailUtilizador = auth.getCurrentUser().getEmail();
         String idUtiliziador = Base64Custom.codifica(emailUtilizador);

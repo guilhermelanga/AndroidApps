@@ -23,25 +23,33 @@ import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 
 public class RegistoActivity extends AppCompatActivity {
 
+    //DECLARAÇÃO DOS CAMPOS DE ENTRADA
     private EditText editNome, editPalavraPasse, editEmail;
     private Button criarCOnta;
+
+    //CONTROLE DOS DADOS
     private boolean dadosVerificados;
+
+    //CONEXÃO COM O AUTENTICADOR DO FIREBASE
     private FirebaseAuth auth;
+
+    //CONEXÃO COM O MODEL UTILIZADOR
     private Utilizador utilizador;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registo);
+        //SYNC DOS CAMPOS DE ENTRADA
         editNome = findViewById(R.id.editNome);
         editEmail = findViewById(R.id.editEmail);
         editPalavraPasse = findViewById(R.id.editPalavraPasse);
         criarCOnta = findViewById(R.id.btnCriarConta);
 
+        //ALTERA NOME QUE APARECE NA TOOLBAR
         getSupportActionBar().setTitle("Registo");
 
-        //auth = FirebaseAuth.getInstance();
-
+        //DEFINE O QUE ACONTECE AO CLICAR NO BOTÃO CRIARCONTA
         criarCOnta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -51,13 +59,17 @@ public class RegistoActivity extends AppCompatActivity {
                 String getEmail = editEmail.getText().toString();
                 String getPalavraPasse = editPalavraPasse.getText().toString();
 
+                //VERIFICA OS DADOS INSERIDOS
                 verificarDados(getNome, getEmail, getPalavraPasse);
 
                 if(dadosVerificados){
+                    //ENVIA OS DADOS AO MODEL
                     utilizador = new Utilizador();
                     utilizador.setNome(getNome);
                     utilizador.setEmail(getEmail);
                     utilizador.setPalavraPasse(getPalavraPasse);
+
+                    //CHAMA O MÉTODO PARA CRIAR O UTILIZADOR
                     criarUtilizador();
                 }
 
@@ -84,8 +96,11 @@ public class RegistoActivity extends AppCompatActivity {
         return dadosVerificados;
     }
 
+    //MÉTODO PARA CRIAR UTILIZADOR
     public void criarUtilizador(){
+
         auth = FirebaseConfig.getFirebaseAuth();
+
         auth.createUserWithEmailAndPassword(
                 utilizador.getEmail(),
                 utilizador.getPalavraPasse()
@@ -93,6 +108,7 @@ public class RegistoActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
+                    //CODIFICA O EMAIL DO UTILIZADOR PARA SER A CHAVE DO USER
                     String idUtilizador = Base64Custom.codifica(utilizador.getEmail());
                     utilizador.setIdUtilizador(idUtilizador);
                     utilizador.guardar();
@@ -101,6 +117,7 @@ public class RegistoActivity extends AppCompatActivity {
                 }else{
 
                     String excecao = "";
+                    //LISTA DAS EXCEÇÕES QUE PODEM OCORRER EM CASO DE FALHA NO CRIAR A CONTA
                     try {
                         throw task.getException();
                     }catch (FirebaseAuthWeakPasswordException e){

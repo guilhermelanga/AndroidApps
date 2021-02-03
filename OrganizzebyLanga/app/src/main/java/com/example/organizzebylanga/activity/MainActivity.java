@@ -14,6 +14,7 @@ import com.heinrichreimersoftware.materialintro.slide.FragmentSlide;
 
 public class MainActivity extends IntroActivity {
 
+    //CONEXÃO COM O FIREBASE
     private FirebaseAuth auth;
 
 
@@ -61,21 +62,26 @@ public class MainActivity extends IntroActivity {
 
     }
 
+
     @Override
     protected void onStart() {
         super.onStart();
 
+        //VERIFICAR SE JÁ HÁ LOGIN
         verificarUtilizadorLogado();
     }
 
+    //ONCLICK DO BOTÃO CRIAR CONTA
     public void btCrieConta(View view){
         startActivity(new Intent(this, RegistoActivity.class));
     }
 
+    //ONCLICK DO TEXTO JÁ TENHO CONTA
     public void btEntrar(View view){
         startActivity(new Intent(this, LoginActivity.class));
     }
 
+    //MÉTODO VERIFICA SE O UTILIZADOR JÁ ESTÁ COM O LOGIN EFETUADO
     public void verificarUtilizadorLogado(){
 
         auth = FirebaseConfig.getFirebaseAuth();
@@ -85,6 +91,7 @@ public class MainActivity extends IntroActivity {
         }
     }
 
+    //MÉTODO PARA ABRIR A ACTIVITY EM CASO NO UTILIZADOR JÁ LOGADO
     public void abrirPrincipalActivity(){
         startActivity(new Intent(this, PrincipalActivity.class));
     }

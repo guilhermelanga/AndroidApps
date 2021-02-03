@@ -13,6 +13,7 @@ public class Utilizador {
     public Utilizador() {
     }
 
+    //GUARDA/CRIA O UTILIZADOR NA BASE DE DADOS
     public void guardar(){
         DatabaseReference firebase = FirebaseConfig.getFirebaseDataBase();
         firebase.child("users")

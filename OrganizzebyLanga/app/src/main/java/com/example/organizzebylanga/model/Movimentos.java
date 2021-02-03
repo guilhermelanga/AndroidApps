@@ -6,14 +6,13 @@ import com.example.organizzebylanga.helper.DataAtual;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 
-import java.util.Base64;
-
 public class Movimentos {
 
     private String data, categoria, descricao, tipo, id;
 
     private Double valor;
 
+    //GUARDA O MOVIMENTO NA BASE DE DOS
     public void guardar(String dataSelecionada){
         FirebaseAuth auth = FirebaseConfig.getFirebaseAuth();
         String idUtilizador = Base64Custom.codifica(auth.getCurrentUser().getEmail());

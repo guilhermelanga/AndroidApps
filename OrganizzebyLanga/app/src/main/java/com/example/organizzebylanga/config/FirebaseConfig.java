@@ -10,6 +10,7 @@ public class FirebaseConfig {
     private static FirebaseAuth auth;
     private static DatabaseReference firebase;
 
+    //CONFIGURA O AUTH DO FIREBASE BASE(BUSCA A INSTÂNCIA DO UTILIZADOR)
     public static FirebaseAuth getFirebaseAuth(){
         if(auth==null){
             auth = FirebaseAuth.getInstance();
@@ -17,6 +18,7 @@ public class FirebaseConfig {
         return  auth;
     }
 
+    //CONFIGURA O DATABASEREFERENCE (BUSCA A BASE DE DADOS)
     public static DatabaseReference getFirebaseDataBase(){
         if(firebase==null){
             firebase = FirebaseDatabase.getInstance().getReference();
