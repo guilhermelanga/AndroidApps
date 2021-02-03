@@ -14,7 +14,6 @@
         app:elevation="0dp">
 
 
-
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -23,6 +22,8 @@
             app:popupTheme="@style/Theme.OrganizzeByLanga.PopupOverlay" />
 
     </com.google.android.material.appbar.AppBarLayout>
+
+    <include layout="@layout/content_principal"/>
 
     <com.github.clans.fab.FloatingActionMenu
         android:id="@+id/menu"
@@ -61,6 +62,6 @@
 
     </com.github.clans.fab.FloatingActionMenu>
 
-    <include layout="@layout/content_principal" />
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
