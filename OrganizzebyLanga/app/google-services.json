@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "766514282504",
+    "firebase_url": "https://organizze-by-langa-44d0e-default-rtdb.firebaseio.com",
+    "project_id": "organizze-by-langa-44d0e",
+    "storage_bucket": "organizze-by-langa-44d0e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:766514282504:android:c8221acf01ec647531d1bd",
+        "android_client_info": {
+          "package_name": "com.example.organizzebylanga"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "766514282504-f0kv2jpf47htj63hlveea0rjs9avlcpd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZ1rCELdtE9DNgR7lfMxvNXq4z3dG62sU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "766514282504-f0kv2jpf47htj63hlveea0rjs9avlcpd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
